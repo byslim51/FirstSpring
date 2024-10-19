@@ -6,23 +6,37 @@ import spring_introduction.spring_container_example.pet.pets.Pet;
 
 public class Test2 {
     public static void main(String[] args) {
-   /**
-    * Без Spring:
-    */
-//        Pet pet = new Cat();
-//        Person person = new Person(pet);
-
-//        person.callYourPet();
-
-   /**
-   * С Spring (но еще имеются сильные зависимости):
-   */
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Pet pet = context.getBean("myPet", Pet.class);
-        Person person = new Person(pet);
+        /**
+         * Без Spring:
+         */
+//        Pet pet = new Cat();
+//        Person person = new Person(pet);
 
+//        System.out.println();
+//        person.callYourPet();
+
+        /**
+         * С Spring, используется IoC (но еще имеются сильные зависимости):
+         */
+
+//        Pet pet = context.getBean("myPet", Pet.class);
+//        Person person = new Person(pet);
+
+//        System.out.println();
+//        person.callYourPet();
+
+
+        /**
+         * C Spring, используется IoC и DI:
+         */
+        Person person = context.getBean("myPerson", Person.class);
+
+        System.out.println();
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
         person.callYourPet();
 
     }
