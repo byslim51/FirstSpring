@@ -1,19 +1,19 @@
-package spring_introduction.spring_container_example.pet;
+package spring_introduction.spring_container_example.withXML;
 
-import spring_introduction.spring_container_example.pet.pets.Pet;
+import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
 
-public class Person {
-    private Pet pet;
+public class PersonWithXml {
+    private PetWithXml pet;
 
     private String surname;
     private int age;
 
-    public Person(Pet pet) {
+    public PersonWithXml(PetWithXml pet) {
         System.out.println("create Person");
         this.pet = pet;
     }
 
-    public Person() {
+    public PersonWithXml() {
         System.out.println("create Person");
     }
 
@@ -22,7 +22,7 @@ public class Person {
         pet.say();
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(PetWithXml pet) {
         System.out.println("setPet Person");
         this.pet = pet;
     }

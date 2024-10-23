@@ -12,19 +12,19 @@
 
 <!-- IoC -->
     <bean id = "myPet"
-          class="spring_introduction.spring_container_example.pet.pets.Cat">
+          class="spring_introduction.spring_container_example.withXML.pet.CatWithXml">
     </bean>
 
 <!--  DI с помощью конструктора  -->
 <!--    <bean id="myPerson"-->
-<!--          class="spring_introduction.spring_container_example.pet.Person"
+<!--          class="spring_introduction.spring_container_example.withXML.PersonWithXml"
 
 <!-            Конкретное использование DI:   -->
 <!--        <constructor-arg ref="myPet"/>-->
 <!--    </bean>-->
 
         <bean id="myPerson"
-              class="spring_introduction.spring_container_example.pet.Person">
+              class="spring_introduction.spring_container_example.withXML.PersonWithXml">
 
 <!--            Конкретное использование DI:   -->
             <property name="pet" ref="myPet"/>

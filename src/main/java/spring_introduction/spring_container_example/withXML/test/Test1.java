@@ -1,17 +1,17 @@
-package spring_introduction.spring_container_example.pet;
+package spring_introduction.spring_container_example.withXML.test;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import spring_introduction.spring_container_example.pet.pets.Pet;
+import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
 
 // Используется старый способ использование Спринг контейнера через xml (без аннотаций)
 public class Test1 {
     public static void main(String[] args) {
         // Загрузка конфигурации
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("applicationContextWithXml.xml");
 
         // Берем у спринг контейнера определенный бин, в нашем случае бин (объект) будет Cat
-        Pet pet = context.getBean("myPet", Pet.class);
+        PetWithXml pet = context.getBean("myPet", PetWithXml.class);
         pet.say();
 
         // Закрываем контекст

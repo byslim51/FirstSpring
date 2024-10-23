@@ -1,7 +1,7 @@
-package spring_introduction.spring_container_example.pet.pets;
+package spring_introduction.spring_container_example.withXML.pet;
 
-public class Cat implements Pet {
-    public Cat() {
+public class CatWithXml implements PetWithXml {
+    public CatWithXml() {
         System.out.println("create Cat");
     }
 

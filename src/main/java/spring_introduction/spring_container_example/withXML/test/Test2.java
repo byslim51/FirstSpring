@@ -1,13 +1,12 @@
-package spring_introduction.spring_container_example.pet;
+package spring_introduction.spring_container_example.withXML.test;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import spring_introduction.spring_container_example.pet.pets.Cat;
-import spring_introduction.spring_container_example.pet.pets.Pet;
+import spring_introduction.spring_container_example.withXML.PersonWithXml;
 
 public class Test2 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("applicationContextWithXml.xml");
 
         /**
          * Без Spring:
@@ -19,7 +18,7 @@ public class Test2 {
 //        person.callYourPet();
 
         /**
-         * С Spring, используется IoC (но еще имеются сильные зависимости):
+         * С Spring, используется IoC:
          */
 
 //        Pet pet = context.getBean("myPet", Pet.class);
@@ -32,7 +31,7 @@ public class Test2 {
         /**
          * C Spring, используется IoC и DI:
          */
-        Person person = context.getBean("myPerson", Person.class);
+        PersonWithXml person = context.getBean("myPerson", PersonWithXml.class);
 
         System.out.println();
         System.out.println(person.getSurname());
