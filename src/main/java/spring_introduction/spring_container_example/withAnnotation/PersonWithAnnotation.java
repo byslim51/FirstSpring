@@ -11,9 +11,11 @@ import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
 public class PersonWithAnnotation {
 //   Autowired для поля
     @Autowired
+//    Qualifier используется для обозначения точного бина для Autowired
     @Qualifier("catBean")
     private PetWithAnnotation pet;
 
+//    Value для внедрения строк
     @Value("${person.surname}")
     private String surname;
     @Value("${person.age}")
