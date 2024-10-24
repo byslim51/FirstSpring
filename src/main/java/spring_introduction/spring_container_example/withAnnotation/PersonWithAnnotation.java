@@ -1,6 +1,8 @@
 package spring_introduction.spring_container_example.withAnnotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import spring_introduction.spring_container_example.withAnnotation.pet.PetWithAnnotation;
 import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
@@ -9,16 +11,19 @@ import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
 public class PersonWithAnnotation {
 //   Autowired для поля
     @Autowired
+    @Qualifier("catBean")
     private PetWithAnnotation pet;
 
+    @Value("${person.surname}")
     private String surname;
+    @Value("${person.age}")
     private int age;
 
     /**
      * Autowired используется для использования DI с помощью аннотаций
      */
 //    @Autowired
-//    public PersonWithAnnotation(PetWithXml pet) {
+//    public PersonWithAnnotation(PetWithAnnotation pet) {
 //        System.out.println("create Person");
 //        this.pet = pet;
 //    }
