@@ -1,15 +1,13 @@
-package spring_introduction.spring_container_example.withAnnotation.pet;
+package spring_introduction.spring_container_example.withJavaCode.Code.pet;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import spring_introduction.spring_container_example.withXML.pet.PetWithXml;
 
-@Component("catBean")
-@Scope("prototype")
-public class CatWithAnnotation implements PetWithAnnotation {
+
+public class CatWithJavaCode implements PetWithJavaCode {
     private String name;
 
-    public CatWithAnnotation() {
+    public CatWithJavaCode() {
         System.out.println("create Cat");
     }
 

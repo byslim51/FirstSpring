@@ -10,6 +10,11 @@ public class ConfigWithAnnotation1 {
                 = new ClassPathXmlApplicationContext("applicationContextWithAnnotation.xml");
 
         CatWithAnnotation myCat = context.getBean("catBean", CatWithAnnotation.class);
+        myCat.setName("123");
+        CatWithAnnotation myCat2 = context.getBean("catBean", CatWithAnnotation.class);
+        System.out.println();
+        System.out.println(myCat2.getName());
+
         PersonWithAnnotation person = context.getBean("personBean", PersonWithAnnotation.class);
         person.callYourPet();
         System.out.println(person.getSurname());
