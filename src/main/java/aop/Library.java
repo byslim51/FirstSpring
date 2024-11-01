@@ -2,14 +2,23 @@ package aop;
 
 import org.springframework.stereotype.Component;
 
+import java.awt.print.Book;
+
 @Component("libraryBean")
 public class Library {
-    public void getBook(String bookName) {
-        System.out.println("Мы взяли книгу " + bookName + "\n");
+    public void getBook() {
+        System.out.println("Мы взяли книгу\n");
     }
 
-    public boolean returnBook() {
+    public void returnBook() {
         System.out.println("Мы вернули книгу \n");
-        return true;
+    }
+
+    public void getMagazine() {
+        System.out.println("Мы взяли журнал\n");
+    }
+
+    public void addBook(String book, String person_name) {
+        System.out.println("Мы добавили книгу");
     }
 }
